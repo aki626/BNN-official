@@ -133,7 +133,7 @@ footer {
     font-size: 60px;
     font-weight: bold;
     margin: 0;
-    color: #ffffff;
+    color: #ffffff !important; /* ← 透明を解除する */
     text-shadow:
         0 0 10px #00eaff,
         0 0 20px #00eaff,
