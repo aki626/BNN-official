@@ -7,6 +7,14 @@ body {
     padding: 0;
 }
 
+/* ロゴ */
+.logo {
+    width: 180px;
+    display: block;
+    margin: 0 auto 20px auto;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 0, 0.4));
+}
+
 /* ヒーローヘッダー */
 .hero {
     text-align: center;
