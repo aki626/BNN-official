@@ -167,7 +167,7 @@ footer {
     font-size: 14px;
 }
 
-/* ロード画面（中央固定・完全版） */
+/* ロード画面（中央固定） */
 #loader {
     position: fixed;
     top: 0;
@@ -178,6 +178,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 99999;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
@@ -187,9 +188,28 @@ footer {
     visibility: hidden;
 }
 
+/* ロード文字（虹色） */
 .loader-text {
     font-size: 40px;
     font-weight: bold;
     color: #ffffff;
     animation: rainbowGlow 2s linear infinite;
+}
+
+/* くるくる回る円 */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #333;
+    border-top-color: #ff00f7;
+    border-right-color: #00eaff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-top: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
