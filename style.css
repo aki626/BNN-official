@@ -178,7 +178,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; /* ← これがないとぐるぐるが消える */
     z-index: 99999;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
@@ -196,7 +196,7 @@ footer {
     animation: rainbowGlow 2s linear infinite;
 }
 
-/* くるくる回る円 */
+/* くるくる回る円（完全版） */
 .spinner {
     width: 60px;
     height: 60px;
