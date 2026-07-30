@@ -7,6 +7,11 @@
 </head>
 <body>
 
+    <!-- ロード画面 -->
+    <div id="loader">
+        <div class="loader-text">BNN Loading...</div>
+    </div>
+
     <!-- ヒーローヘッダー -->
     <header class="hero">
         <img class="logo" src="logo.png" alt="BNNロゴ">
@@ -23,7 +28,7 @@
             <h3>BNN AKI1202</h3>
             <p>リーダー / デザイン担当 / エンジョイ部門</p>
             <p>チャプター4からやってます　ゼロビ / 建築あり　基本どちらでもOK</p>
-            <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -31,7 +36,7 @@
             <h3>みんなのろくのすけ</h3>
             <p>副リーダー / エンジョイ部門</p>
             <p>YouTubeやってるらしい</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -39,7 +44,7 @@
             <h3>moka gumi</h3>
             <p>副リーダー / エンジョイ部門</p>
             <p>チャプター2からしてるらしい</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -47,7 +52,7 @@
             <h3>Palasedclown</h3>
             <p>エンジョイ部門</p>
             <p>プレステ勢　基本ゼロビだけらしい</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -55,7 +60,7 @@
             <h3>WTKFT４１３</h3>
             <p>エンジョイ部門 / 競技部門</p>
             <p>リア友以外に初めてチームに入ってくれた人</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -63,7 +68,7 @@
             <h3>menndako1919</h3>
             <p>エンジョイ部門</p>
             <p>最近あんまり一緒にやってないけどめっちゃうまい　IDたしか変えてると思う</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -71,7 +76,7 @@
             <h3>暇人ニキ哉太郎</h3>
             <p>競技部門</p>
             <p>あんまり遊んだことないけど競技がんばってね！（応援してます）</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
 
         <div class="member-card">
@@ -79,16 +84,16 @@
             <h3>bossboy01037</h3>
             <p>エンジョイ部門</p>
             <p>新しく仲良くなった子です！入ってくれました！</p>
-             <P>やっているゲーム：フォートナイト</P>
+            <p>やっているゲーム：フォートナイト</p>
         </div>
-  
-  　　　<div class="member-card">
+
+        <div class="member-card">
             <div class="icon">❀</div>
             <h3>Yatto0912</h3>
             <p>エンジョイ部門</p>
             <p>このチーム初のフォトナ以外の人</p>
-             <P>やっているゲーム：Apex・マイクラ</P>
-       </div>
+            <p>やっているゲーム：Apex・マイクラ</p>
+        </div>
 
     </section>
 
@@ -110,6 +115,14 @@
     <footer>
         © 2026 BNN Team　オーナー BNN AKI1202
     </footer>
+
+    <!-- ロード画面フェードアウト -->
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
+            loader.classList.add("hide");
+        });
+    </script>
 
 </body>
 </html>
