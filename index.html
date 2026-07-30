@@ -7,9 +7,10 @@
 </head>
 <body>
 
-    <!-- ロード画面（必ず中央に出る） -->
+    <!-- ロード画面（中央固定＋くるくる回る円） -->
     <div id="loader">
         <div class="loader-text">BNN Loading...</div>
+        <div class="spinner"></div>
     </div>
 
     <!-- ヒーローヘッダー -->
@@ -116,15 +117,13 @@
         © 2026 BNN Team　オーナー BNN AKI1202
     </footer>
 
-    <!-- ロード画面フェードアウト -->
+    <!-- ロード画面フェードアウト（6秒固定） -->
     <script>
-    // 6秒後にロード画面を消す
-    setTimeout(() => {
-        const loader = document.getElementById("loader");
-        loader.classList.add("hide");
-    }, 6000); // ← 6000ms = 6秒
-</script>
-
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            loader.classList.add("hide");
+        }, 6000); // ← 6秒固定
+    </script>
 
 </body>
 </html>
