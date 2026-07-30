@@ -118,11 +118,13 @@
 
     <!-- ロード画面フェードアウト -->
     <script>
-        window.addEventListener("load", () => {
-            const loader = document.getElementById("loader");
-            loader.classList.add("hide");
-        });
-    </script>
+    // 6秒後にロード画面を消す
+    setTimeout(() => {
+        const loader = document.getElementById("loader");
+        loader.classList.add("hide");
+    }, 6000); // ← 6000ms = 6秒
+</script>
+
 
 </body>
 </html>
