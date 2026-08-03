@@ -13,6 +13,16 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- 右側メニュー（サイドバー） -->
+    <div class="sidebar">
+        <h3>BNN MENU</h3>
+        <ul>
+            <li><a href="#members">メンバー一覧</a></li>
+            <li><a href="#about">BNNについて</a></li>
+            <li><a href="#updates">やったこと一覧</a></li>
+        </ul>
+    </div>
+
     <!-- ヒーローヘッダー -->
     <header class="hero">
         <img class="logo" src="logo.png" alt="BNNロゴ">
@@ -21,7 +31,7 @@
     </header>
 
     <!-- メンバー一覧 -->
-    <section class="members">
+    <section class="members" id="members">
         <h2>Team Members</h2>
 
         <div class="member-card">
@@ -96,18 +106,18 @@
             <p>やっているゲーム：Apex・マイクラ</p>
         </div>
 
-　　　　<div class="member-card">
+        <div class="member-card">
             <div class="icon">🫡</div>
             <h3>雷電(=^・・^=)</h3>
             <p>エンジョイ部門</p>
-            <p>チャプターXで1回引退しましたがチャプター2シーズン4から復帰しましたでもチャプター6シーズン1でSwitchからプレステ4に変わりました（本人が書きました）</p>
+            <p>チャプターXで1回引退→チャプター2シーズン4で復帰→チャプター6シーズン1でSwitchからPS4へ変更（本人談）</p>
             <p>やっているゲーム：Roblox・Apex・フォートナイト</p>
         </div>
 
     </section>
 
     <!-- BNNについて -->
-    <section class="about">
+    <section class="about" id="about">
         <h2>BNNについて</h2>
         <p>
             BNNは「みんな仲よく」を大切にするゲームチームです。協力プレイ、交流、創作活動など、楽しく活動しています。<br>
@@ -120,6 +130,27 @@
         </a>
     </section>
 
+    <!-- やったこと一覧（更新履歴） -->
+    <section class="updates" id="updates">
+        <h2>やったこと一覧</h2>
+
+        <div class="update-card">
+            <h4>2026/08/04</h4>
+            <p>右側メニュー（サイドバー）を追加！</p>
+        </div>
+
+        <div class="update-card">
+            <h4>2026/08/04</h4>
+            <p>BNN公式サイトにロード画面（虹色＋ぐるぐる）を追加！</p>
+        </div>
+
+        <div class="update-card">
+            <h4>2026/08/03</h4>
+            <p>メンバー一覧を最新情報に更新。</p>
+        </div>
+
+    </section>
+
     <!-- フッター -->
     <footer>
         © 2026 BNN Team　オーナー BNN AKI1202
@@ -130,7 +161,7 @@
         setTimeout(() => {
             const loader = document.getElementById("loader");
             loader.classList.add("hide");
-        }, 6000); /* ← 6秒固定 */
+        }, 6000);
     </script>
 
 </body>
