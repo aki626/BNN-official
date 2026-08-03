@@ -32,34 +32,13 @@ body {
 
 /* 虹色アニメーション */
 @keyframes rainbowGlow {
-    0% {
-        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
-        color: #ff0000;
-    }
-    16% {
-        text-shadow: 0 0 20px #ff7f00, 0 0 40px #ff7f00;
-        color: #ff7f00;
-    }
-    33% {
-        text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00;
-        color: #ffff00;
-    }
-    50% {
-        text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
-        color: #00ff00;
-    }
-    66% {
-        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-        color: #00ffff;
-    }
-    83% {
-        text-shadow: 0 0 20px #0000ff, 0 0 40px #0000ff;
-        color: #0000ff;
-    }
-    100% {
-        text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-        color: #ff00ff;
-    }
+    0% { text-shadow: 0 0 20px #ff0000; color: #ff0000; }
+    16% { text-shadow: 0 0 20px #ff7f00; color: #ff7f00; }
+    33% { text-shadow: 0 0 20px #ffff00; color: #ffff00; }
+    50% { text-shadow: 0 0 20px #00ff00; color: #00ff00; }
+    66% { text-shadow: 0 0 20px #00ffff; color: #00ffff; }
+    83% { text-shadow: 0 0 20px #0000ff; color: #0000ff; }
+    100% { text-shadow: 0 0 20px #ff00ff; color: #ff00ff; }
 }
 
 .hero p {
@@ -93,13 +72,8 @@ body {
     transition: 0.25s;
 }
 
-/* ホバー＆タップで光る */
-.member-card:hover,
-.member-card:active {
-    box-shadow:
-        0 0 20px #00eaff,
-        0 0 40px #00eaff,
-        0 0 60px #ff00f7;
+.member-card:hover {
+    box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff, 0 0 60px #ff00f7;
     transform: translateY(-5px) scale(1.03);
     border-color: #00eaff;
 }
@@ -178,7 +152,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* ← これがないとぐるぐるが消える */
+    flex-direction: column;
     z-index: 99999;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
@@ -196,7 +170,7 @@ footer {
     animation: rainbowGlow 2s linear infinite;
 }
 
-/* くるくる回る円（完全版） */
+/* くるくる回る円 */
 .spinner {
     width: 60px;
     height: 60px;
@@ -209,7 +183,91 @@ footer {
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
+}
+
+/* 右側サイドバー */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    background: #0a0a0a;
+    border-left: 2px solid #00eaff;
+    box-shadow: -4px 0 12px rgba(0, 255, 255, 0.3);
+    padding: 20px;
+    z-index: 9999;
+}
+
+.sidebar h3 {
+    color: #00eaff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 18px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+.sidebar a:hover {
+    background: #00eaff;
+    color: #000;
+    transform: translateX(-5px);
+}
+
+/* やったこと一覧（更新履歴） */
+.updates {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.updates h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ff00f7;
+}
+
+.update-card {
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.15);
+    transition: 0.25s;
+}
+
+.update-card:hover {
+    box-shadow: 0 0 20px #ff00f7, 0 0 40px #00eaff;
+    transform: translateY(-5px);
+}
+
+.update-card h4 {
+    margin: 0;
+    color: #00eaff;
+    font-size: 20px;
+}
+
+.update-card p {
+    margin-top: 8px;
+    color: #ccc;
 }
