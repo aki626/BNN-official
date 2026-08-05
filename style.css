@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
 
-    margin-right: 330px; /* ← サイドバー幅300px + 余白30px */
+    margin-right: 330px;
 }
 
 .logo {
