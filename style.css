@@ -1,6 +1,4 @@
-/* ============================
-   ロード画面
-============================ */
+/* ロード画面 */
 #loader {
     position: fixed;
     width: 100%;
@@ -28,21 +26,17 @@
 }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* ============================
-   サイドバー（右側固定）
-============================ */
+/* サイドバー（左側固定） */
 .sidebar {
-    position: fixed !important;
-    right: 0 !important;
-    left: auto !important;
+    position: fixed;
+    left: 0;
     top: 0;
     width: 230px;
     height: 100vh;
     background: #111;
     padding: 20px;
-    border-left: 2px solid #00eaff;
-    box-shadow: -5px 0 15px #00eaff;
-    z-index: 9990;
+    border-right: 2px solid #00eaff;
+    box-shadow: 5px 0 15px #00eaff;
 }
 .sidebar h3 {
     color: #00eaff;
@@ -53,20 +47,14 @@
     font-size: 18px;
 }
 
-/* ============================
-   メイン余白（右側メニュー用）
-============================ */
+/* メイン */
 body {
-    margin-right: 250px !important;
-    margin-left: 0 !important;
+    margin-left: 250px;
     background: #0a0a0a;
     color: #fff;
     font-family: "Segoe UI", sans-serif;
 }
 
-/* ============================
-   ヘッダー
-============================ */
 .hero {
     text-align: center;
     padding: 20px;
@@ -74,44 +62,13 @@ body {
 .logo {
     width: 120px;
 }
-
-/* ★★★ BNNタイトル光復活 ★★★ */
 .title {
     font-size: 40px;
     color: #00eaff;
-    text-shadow:
-        0 0 5px #00eaff,
-        0 0 10px #00eaff,
-        0 0 20px #00eaff,
-        0 0 40px #00eaff;
-    animation: glowTitle 2s infinite;
+    text-shadow: 0 0 10px #00eaff;
 }
 
-@keyframes glowTitle {
-    0% {
-        text-shadow:
-            0 0 5px #00eaff,
-            0 0 10px #00eaff,
-            0 0 20px #00eaff;
-    }
-    50% {
-        text-shadow:
-            0 0 10px #00eaff,
-            0 0 20px #00eaff,
-            0 0 40px #00eaff,
-            0 0 60px #00eaff;
-    }
-    100% {
-        text-shadow:
-            0 0 5px #00eaff,
-            0 0 10px #00eaff,
-            0 0 20px #00eaff;
-    }
-}
-
-/* ============================
-   メンバーカード
-============================ */
+/* メンバーカード */
 .member-card {
     background: #111;
     border: 2px solid #00eaff;
@@ -119,18 +76,9 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px #00eaff;
-    transition: 0.2s;
 }
 
-/* ★★★ ホバー光復活 ★★★ */
-.member-card:hover {
-    box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
-    transform: scale(1.02);
-}
-
-/* ============================
-   やったこと一覧
-============================ */
+/* やったこと一覧 */
 .update-card {
     background: #111;
     border: 2px solid #00eaff;
@@ -139,9 +87,7 @@ body {
     border-radius: 10px;
 }
 
-/* ============================
-   管理者ボタン
-============================ */
+/* 管理者ボタン */
 .admin-button {
     display: inline-block;
     margin: 20px 0;
@@ -161,9 +107,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ============================
-   管理者ログイン・パネル
-============================ */
+/* 管理者ログイン・パネル */
 .admin-login, .admin-panel {
     display: none;
     background: #111;
@@ -176,42 +120,3 @@ body {
 .error {
     color: red;
 }
-
-/* ============================
-   ポップアップ背景
-============================ */
-.popup-bg {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: 9998;
-}
-
-/* ============================
-   ポップアップ本体
-============================ */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: #111;
-    padding: 25px;
-    border: 2px solid #00eaff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00eaff;
-    z-index: 9999;
-    width: 300px;
-    text-align: center;
-}
-
-/* ============================
-   管理者パネル（青ネオン）
-============================ */
-.admin-panel {
-    border: 2px solid #00eaff;
-    box-shadow: 0 0 20px #00eaff;
-}
-
