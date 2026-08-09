@@ -1,170 +1,342 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>BNN - 公式ホームページ</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>BNN - 公式ホームページ</title>
+
+<style>
+/* ============================
+   ロード画面
+============================ */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.5s;
+}
+.loader-text {
+    color: #00eaff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #222;
+    border-top: 5px solid #00eaff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* ============================
+   サイドバー
+============================ */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100vh;
+    background: #111;
+    padding: 20px;
+    border-right: 2px solid #00eaff;
+    box-shadow: 5px 0 15px #00eaff;
+}
+.sidebar h3 {
+    color: #00eaff;
+}
+.sidebar a {
+    color: #00eaff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* ============================
+   メイン
+============================ */
+body {
+    margin-left: 250px;
+    background: #0a0a0a;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px;
+}
+.logo {
+    width: 120px;
+}
+.title {
+    font-size: 40px;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* ============================
+   メンバーカード
+============================ */
+.member-card {
+    background: #111;
+    border: 2px solid #00eaff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+/* ============================
+   やったこと一覧
+============================ */
+.update-card {
+    background: #111;
+    border: 2px solid #00eaff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* ============================
+   管理者ボタン
+============================ */
+.admin-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 14px 28px;
+    background: #ff0066;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 10px #ff0066, 0 0 25px #ff0066;
+    transition: 0.3s;
+}
+.admin-button:hover {
+    background: #ff1a75;
+    box-shadow: 0 0 20px #ff1a75, 0 0 40px #ff1a75;
+    transform: scale(1.05);
+}
+
+/* ============================
+   管理者ログイン
+============================ */
+.admin-login, .admin-panel {
+    display: none;
+    background: #111;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #00eaff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00eaff;
+}
+.error {
+    color: red;
+}
+</style>
 </head>
+
 <body>
 
-    <div id="loader">
-        <div class="loader-text">BNN Loading...</div>
-        <div class="spinner"></div>
+<!-- ロード画面 -->
+<div id="loader">
+    <div class="loader-text">BNN Loading...</div>
+    <div class="spinner"></div>
+</div>
+
+<!-- サイドバー -->
+<div class="sidebar">
+    <h3>BNN MENU</h3>
+    <ul>
+        <li><a href="#members">メンバー一覧</a></li>
+        <li><a href="#about">BNNについて</a></li>
+        <li><a href="#updates">やったこと一覧</a></li>
+    </ul>
+</div>
+
+<!-- ヘッダー -->
+<header class="hero">
+    <img class="logo" src="logo.png" alt="BNNロゴ">
+    <h1 class="title">BNN</h1>
+    <p>～みんな仲よく活動するゲームチーム～</p>
+</header>
+
+<!-- 管理者ボタン -->
+<a class="admin-button" onclick="openAdminLogin()">管理者権限を使用する</a>
+
+<!-- 管理者ログイン -->
+<div id="admin-login" class="admin-login">
+    <h3>管理者ログイン</h3>
+    <input type="password" id="admin-pass" placeholder="パスワードを入力">
+    <button onclick="checkAdminPass()">ログイン</button>
+    <p id="admin-error" class="error"></p>
+</div>
+
+<!-- 管理者パネル -->
+<div id="admin-panel" class="admin-panel">
+    <h2>管理者パネル</h2>
+
+    <h3>メンバーの役割を変更</h3>
+    <select id="member-select">
+        <option>BNN AKI1202</option>
+        <option>みんなのろくのすけ</option>
+        <option>moka gumi</option>
+        <option>Palasedclown</option>
+        <option>WTKFT４１３</option>
+        <option>menndako1919</option>
+        <option>暇人ニキ哉太郎</option>
+        <option>BNN bossboy01037</option>
+        <option>Yatto0912</option>
+        <option>雷電(=^・・^=)</option>
+    </select>
+
+    <input type="text" id="new-role" placeholder="新しい役割を入力">
+    <button onclick="changeRole()">変更する</button>
+
+    <h3>やったこと一覧に追加</h3>
+    <input type="text" id="update-text" placeholder="内容を入力">
+    <button onclick="addUpdate()">追加する</button>
+</div>
+
+<!-- メンバー一覧 -->
+<section id="members">
+    <h2>Team Members</h2>
+
+    <div class="member-card">
+        <h3>BNN AKI1202</h3>
+        <p>リーダー / エンジョイ部門</p>
     </div>
 
-    <div class="sidebar">
-        <h3>BNN MENU</h3>
-        <ul>
-            <li><a href="#members">メンバー一覧</a></li>
-            <li><a href="#about">BNNについて</a></li>
-            <li><a href="#updates">やったこと一覧 / 起きたこと一覧</a></li>
-        </ul>
+    <div class="member-card">
+        <h3>みんなのろくのすけ</h3>
+        <p>副リーダー / エンジョイ部門</p>
     </div>
 
-    <header class="hero">
-        <img class="logo" src="logo.png" alt="BNNロゴ">
-        <h1 class="title">BNN</h1>
-        <p>～みんな仲よく活動するゲームチーム～</p>
-    </header>
+    <div class="member-card">
+        <h3>moka gumi</h3>
+        <p>副リーダー / エンジョイ部門</p>
+    </div>
 
-    <section class="members" id="members">
-        <h2>Team Members</h2>
+    <div class="member-card">
+        <h3>Palasedclown</h3>
+        <p>エンジョイ部門</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">✦</div>
-            <h3>BNN AKI1202</h3>
-            <p>リーダー / エンジョイ部門</p>
-            <p>チャプター4からやってます　ゼロビ / 建築あり　基本どちらでもOK</p>
-            <p>やっているゲーム：Roblox・フォートナイト</p>
-        </div>
+    <div class="member-card">
+        <h3>WTKFT４１３</h3>
+        <p>エンジョイ部門 / 競技部門</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">⚚</div>
-            <h3>みんなのろくのすけ</h3>
-            <p>副リーダー / エンジョイ部門</p>
-            <p>YouTubeやってる</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+    <div class="member-card">
+        <h3>menndako1919</h3>
+        <p>エンジョイ部門</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">✵</div>
-            <h3>moka gumi</h3>
-            <p>副リーダー / エンジョイ部門</p>
-            <p>チャプター2からしてる</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+    <div class="member-card">
+        <h3>暇人ニキ哉太郎</h3>
+        <p>競技部門</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">✧</div>
-            <h3>Palasedclown</h3>
-            <p>エンジョイ部門</p>
-            <p>プレステ勢　基本ゼロビだけらしい</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+    <div class="member-card">
+        <h3>BNN bossboy01037</h3>
+        <p>エンジョイ部門</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">⚝</div>
-            <h3>WTKFT４１３</h3>
-            <p>エンジョイ部門 / 競技部門</p>
-            <p>リア友以外に初めてチームに入ってくれた人</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+    <div class="member-card">
+        <h3>Yatto0912</h3>
+        <p>エンジョイ部門</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">✪</div>
-            <h3>menndako1919</h3>
-            <p>エンジョイ部門</p>
-            <p>最近あんまり一緒にやってないけどめっちゃうまい　IDたしか変えてると思う</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+    <div class="member-card">
+        <h3>雷電(=^・・^=)</h3>
+        <p>エンジョイ部門</p>
+    </div>
+</section>
 
-        <div class="member-card">
-            <div class="icon">❂</div>
-            <h3>暇人ニキ哉太郎</h3>
-            <p>競技部門</p>
-            <p>あんまり遊んだことないけど競技がんばってね！（応援してます）</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+<!-- やったこと一覧 -->
+<section id="updates">
+    <h2>やったこと一覧</h2>
 
-        <div class="member-card">
-            <div class="icon">✺</div>
-            <h3>BNN bossboy01037</h3>
-            <p>エンジョイ部門</p>
-            <p>新しく仲良くなった子です！入ってくれました！</p>
-            <p>やっているゲーム：フォートナイト</p>
-        </div>
+    <div class="update-card">
+        <h4>2026/08/04</h4>
+        <p>新しいメンバー「雷電さん」がBNNに加入！</p>
+    </div>
 
-        <div class="member-card">
-            <div class="icon">❀</div>
-            <h3>Yatto0912</h3>
-            <p>エンジョイ部門</p>
-            <p>このチーム初のフォトナ以外の人</p>
-            <p>やっているゲーム：Apex・マイクラ</p>
-        </div>
+    <div class="update-card">
+        <h4>2026/08/04</h4>
+        <p>メニューを作成</p>
+    </div>
+</section>
 
-        <div class="member-card">
-            <div class="icon">🫡</div>
-            <h3>雷電(=^・・^=)</h3>
-            <p>エンジョイ部門</p>
-            <p>チャプターXで1回引退→チャプター2シーズン4で復帰→チャプター6シーズン1でSwitchからPS4へ変更（本人考案）</p>
-            <p>やっているゲーム：Roblox・Apex・フォートナイト</p>
-        </div>
+<footer>
+    © 2026 BNN Team　オーナー BNN AKI1202
+</footer>
 
-    </section>
+<script>
+setTimeout(() => {
+    document.getElementById("loader").style.opacity = "0";
+}, 2000);
 
-    <section class="about" id="about">
-        <h2>BNNについて</h2>
-        <p>
-            BNNは「みんな仲よく」を大切にするゲームチームです。協力プレイ、交流、創作活動など、楽しく活動しています。<br>
-            チームメンバーのIDが変わっていることあります<br>
-            チームでは定期的に大会をやったり<br>
-            交流会をしたりしようと思ってます。<br>
-            参加の際に、やっているゲーム名や、そのゲームで使っている名前を聞くことがございますが<br>
-            その情報は決して外部に漏らしたり、ホームページに載せるための用途以外に使うことはございません
-            のでご安心ください<br>
-        </p>
+/* 管理者機能 */
+const ADMIN_PASSWORD = "bnnadmin";
 
-    <p> <br>
-        <br>
-        <br>
-    </p>
+function openAdminLogin() {
+    document.getElementById("admin-login").style.display = "block";
+}
 
-        <a class="join-button" href="https://form.run/@BNN" target="_blank">
-            BNN参加フォームへ
-        </a>
+function checkAdminPass() {
+    const pass = document.getElementById("admin-pass").value;
+    if (pass === ADMIN_PASSWORD) {
+        document.getElementById("admin-login").style.display = "none";
+        document.getElementById("admin-panel").style.display = "block";
+    } else {
+        document.getElementById("admin-error").innerText = "パスワードが違います";
+    }
+}
 
-    </section>
+function changeRole() {
+    const member = document.getElementById("member-select").value;
+    const newRole = document.getElementById("new-role").value;
 
-    <section class="updates" id="updates">
-        <h2>やったこと一覧 / 起きたこと一覧</h2>
+    if (!newRole) return alert("役割を入力してください");
 
-        <div class="update-card">
-            <h4>2026/08/04</h4>
-            <p>新しいメンバー「雷電さん」がBNNに加入！（エンジョイ部門へ参加）</p>
-        </div>
+    const cards = document.querySelectorAll(".member-card");
 
-        <div class="update-card">
-            <h4>2026/08/04</h4>
-            <p>メニューを作成</p>
-        </div>
+    cards.forEach(card => {
+        if (card.querySelector("h3").innerText === member) {
+            card.querySelectorAll("p")[0].innerText = newRole;
+        }
+    });
 
-        <div class="update-card">
-            <h4>2026/08/05</h4>
-            <p>小アプデ</p>
-        </div>
+    alert("役割を変更しました！");
+}
 
-    </section>
+function addUpdate() {
+    const text = document.getElementById("update-text").value;
+    if (!text) return alert("内容を入力してください");
 
-    <footer>
-        © 2026 BNN Team　オーナー BNN AKI1202
-    </footer>
+    const updatesSection = document.getElementById("updates");
 
-    <script>
-        setTimeout(() => {
-            const loader = document.getElementById("loader");
-            loader.classList.add("hide");
-        }, 6000);
-    </script>
+    const newCard = document.createElement("div");
+    newCard.className = "update-card";
+    newCard.innerHTML = `
+        <h4>${new Date().toLocaleDateString()}</h4>
+        <p>${text}</p>
+    `;
+
+    updatesSection.appendChild(newCard);
+
+    alert("追加しました！");
+}
+</script>
 
 </body>
 </html>
