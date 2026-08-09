@@ -26,17 +26,17 @@
 }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* サイドバー */
+/* サイドバー（右側固定） */
 .sidebar {
     position: fixed;
-    left: 0;
+    right: 0;
     top: 0;
     width: 230px;
     height: 100vh;
     background: #111;
     padding: 20px;
-    border-right: 2px solid #00eaff;
-    box-shadow: 5px 0 15px #00eaff;
+    border-left: 2px solid #00eaff;
+    box-shadow: -5px 0 15px #00eaff;
 }
 .sidebar h3 {
     color: #00eaff;
@@ -47,14 +47,16 @@
     font-size: 18px;
 }
 
-/* メイン */
+/* メイン余白（右側メニュー用） */
 body {
-    margin-left: 250px;
+    margin-right: 250px;
+    margin-left: 0;
     background: #0a0a0a;
     color: #fff;
     font-family: "Segoe UI", sans-serif;
 }
 
+/* ヘッダー */
 .hero {
     text-align: center;
     padding: 20px;
@@ -76,6 +78,13 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px #00eaff;
+}
+
+/* ホバー光復活 */
+.member-card:hover {
+    box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+    transform: scale(1.02);
+    transition: 0.2s;
 }
 
 /* やったこと一覧 */
@@ -147,8 +156,8 @@ body {
     text-align: center;
 }
 
-/* 管理者パネル豪華化 */
+/* 管理者パネル豪華化（青ネオン） */
 .admin-panel {
-    border: 2px solid #ff0066;
-    box-shadow: 0 0 20px #ff0066;
+    border: 2px solid #00eaff;
+    box-shadow: 0 0 20px #00eaff;
 }
