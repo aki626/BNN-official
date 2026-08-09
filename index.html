@@ -4,144 +4,9 @@
 <meta charset="UTF-8">
 <title>BNN - 公式ホームページ</title>
 
-<style>
-/* ============================
-   ロード画面
-============================ */
-#loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 9999;
-    transition: opacity 0.5s;
-}
-.loader-text {
-    color: #00eaff;
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #222;
-    border-top: 5px solid #00eaff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-@keyframes spin { 100% { transform: rotate(360deg); } }
+<link rel="stylesheet" href="style.css">
+<script src="admin.js" defer></script>
 
-/* ============================
-   サイドバー
-============================ */
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 230px;
-    height: 100vh;
-    background: #111;
-    padding: 20px;
-    border-right: 2px solid #00eaff;
-    box-shadow: 5px 0 15px #00eaff;
-}
-.sidebar h3 {
-    color: #00eaff;
-}
-.sidebar a {
-    color: #00eaff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* ============================
-   メイン
-============================ */
-body {
-    margin-left: 250px;
-    background: #0a0a0a;
-    color: #fff;
-    font-family: "Segoe UI", sans-serif;
-}
-
-.hero {
-    text-align: center;
-    padding: 20px;
-}
-.logo {
-    width: 120px;
-}
-.title {
-    font-size: 40px;
-    color: #00eaff;
-    text-shadow: 0 0 10px #00eaff;
-}
-
-/* ============================
-   メンバーカード
-============================ */
-.member-card {
-    background: #111;
-    border: 2px solid #00eaff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00eaff;
-}
-
-/* ============================
-   やったこと一覧
-============================ */
-.update-card {
-    background: #111;
-    border: 2px solid #00eaff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-/* ============================
-   管理者ボタン
-============================ */
-.admin-button {
-    display: inline-block;
-    margin: 20px 0;
-    padding: 14px 28px;
-    background: #ff0066;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 0 10px #ff0066, 0 0 25px #ff0066;
-    transition: 0.3s;
-}
-.admin-button:hover {
-    background: #ff1a75;
-    box-shadow: 0 0 20px #ff1a75, 0 0 40px #ff1a75;
-    transform: scale(1.05);
-}
-
-/* ============================
-   管理者ログイン
-============================ */
-.admin-login, .admin-panel {
-    display: none;
-    background: #111;
-    padding: 20px;
-    margin: 20px 0;
-    border: 2px solid #00eaff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00eaff;
-}
-.error {
-    color: red;
-}
-</style>
 </head>
 
 <body>
@@ -152,7 +17,7 @@ body {
     <div class="spinner"></div>
 </div>
 
-<!-- サイドバー -->
+<!-- サイドバー（右固定） -->
 <div class="sidebar">
     <h3>BNN MENU</h3>
     <ul>
@@ -243,3 +108,42 @@ body {
     <div class="member-card">
         <h3>暇人ニキ哉太郎</h3>
         <p>競技部門</p>
+    </div>
+
+    <div class="member-card">
+        <h3>BNN bossboy01037</h3>
+        <p>エンジョイ部門</p>
+    </div>
+
+    <div class="member-card">
+        <h3>Yatto0912</h3>
+        <p>エンジョイ部門</p>
+    </div>
+
+    <div class="member-card">
+        <h3>雷電(=^・・^=)</h3>
+        <p>エンジョイ部門</p>
+    </div>
+</section>
+
+<!-- やったこと一覧 -->
+<section id="updates">
+    <h2>やったこと一覧</h2>
+
+    <div class="update-card">
+        <h4>2026/08/04</h4>
+        <p>新しいメンバー「雷電さん」がBNNに加入！</p>
+    </div>
+
+    <div class="update-card">
+        <h4>2026/08/04</h4>
+        <p>メニューを作成</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 BNN Team　オーナー BNN AKI1202
+</footer>
+
+</body>
+</html>
