@@ -26,7 +26,7 @@
 }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* サイドバー（左側固定） */
+/* サイドバー（左固定） */
 .sidebar {
     position: fixed;
     left: 0;
@@ -76,6 +76,13 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px #00eaff;
+    transition: 0.2s;
+}
+
+/* ホバーで光る */
+.member-card:hover {
+    box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+    transform: scale(1.02);
 }
 
 /* やったこと一覧 */
@@ -85,38 +92,4 @@ body {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 10px;
-}
-
-/* 管理者ボタン */
-.admin-button {
-    display: inline-block;
-    margin: 20px 0;
-    padding: 14px 28px;
-    background: #ff0066;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 0 10px #ff0066, 0 0 25px #ff0066;
-    transition: 0.3s;
-}
-.admin-button:hover {
-    background: #ff1a75;
-    box-shadow: 0 0 20px #ff1a75, 0 0 40px #ff1a75;
-    transform: scale(1.05);
-}
-
-/* 管理者ログイン・パネル */
-.admin-login, .admin-panel {
-    display: none;
-    background: #111;
-    padding: 20px;
-    margin: 20px 0;
-    border: 2px solid #00eaff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00eaff;
-}
-.error {
-    color: red;
 }
