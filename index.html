@@ -1,112 +1,162 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>BNN - 公式ホームページ</title>
-
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-
+    <meta charset="UTF-8">
+    <title>BNN - なかよく活動するゲームチーム</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ロード画面 -->
-<div id="loader">
-    <div class="loader-text">BNN Loading...</div>
-    <div class="spinner"></div>
-</div>
-
-<!-- サイドバー（左固定） -->
-<div class="sidebar">
-    <h3>BNN MENU</h3>
-    <ul>
-        <li><a href="#members">メンバー一覧</a></li>
-        <li><a href="#about">BNNについて</a></li>
-        <li><a href="#updates">やったこと一覧</a></li>
-    </ul>
-</div>
-
-<!-- ヘッダー -->
-<header class="hero">
-    <img class="logo" src="logo.png" alt="BNNロゴ">
-    <h1 class="title">BNN</h1>
-    <p>～みんな仲よく活動するゲームチーム～</p>
-</header>
-
-<!-- メンバー一覧 -->
-<section id="members">
-    <h2>Team Members</h2>
-
-    <div class="member-card">
-        <h3>BNN AKI1202</h3>
-        <p>リーダー / エンジョイ部門</p>
+    <!-- ロード画面（中央固定＋くるくる回る円） -->
+    <div id="loader">
+        <div class="loader-text">BNN Loading...</div>
+        <div class="spinner"></div>
     </div>
 
-    <div class="member-card">
-        <h3>みんなのろくのすけ</h3>
-        <p>副リーダー / エンジョイ部門</p>
+    <!-- 右側メニュー（巨大サイドバー） -->
+    <div class="sidebar">
+        <h3>BNN MENU</h3>
+        <ul>
+            <li><a href="#members">メンバー一覧</a></li>
+            <li><a href="#about">BNNについて</a></li>
+            <li><a href="#updates">やったこと一覧</a></li>
+        </ul>
     </div>
 
-    <div class="member-card">
-        <h3>moka gumi</h3>
-        <p>副リーダー / エンジョイ部門</p>
-    </div>
+    <!-- ヒーローヘッダー -->
+    <header class="hero">
+        <img class="logo" src="logo.png" alt="BNNロゴ">
+        <h1 class="title">BNN</h1>
+        <p>みんな仲よく活動するゲーム集団</p>
+    </header>
 
-    <div class="member-card">
-        <h3>Palasedclown</h3>
-        <p>エンジョイ部門</p>
-    </div>
+    <!-- メンバー一覧 -->
+    <section class="members" id="members">
+        <h2>Team Members</h2>
 
-    <div class="member-card">
-        <h3>WTKFT４１３</h3>
-        <p>エンジョイ部門 / 競技部門</p>
-    </div>
+        <div class="member-card">
+            <div class="icon">✦</div>
+            <h3>BNN AKI1202</h3>
+            <p>リーダー / デザイン担当 / エンジョイ部門</p>
+            <p>チャプター4からやってます　ゼロビ / 建築あり　基本どちらでもOK</p>
+            <p>やっているゲーム：Roblox・フォートナイト</p>
+        </div>
 
-    <div class="member-card">
-        <h3>menndako1919</h3>
-        <p>エンジョイ部門</p>
-    </div>
+        <div class="member-card">
+            <div class="icon">⚚</div>
+            <h3>みんなのろくのすけ</h3>
+            <p>副リーダー / エンジョイ部門</p>
+            <p>YouTubeやってるらしい</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-    <div class="member-card">
-        <h3>暇人ニキ哉太郎</h3>
-        <p>競技部門</p>
-    </div>
+        <div class="member-card">
+            <div class="icon">✵</div>
+            <h3>moka gumi</h3>
+            <p>副リーダー / エンジョイ部門</p>
+            <p>チャプター2からしてるらしい</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-    <div class="member-card">
-        <h3>BNN bossboy01037</h3>
-        <p>エンジョイ部門</p>
-    </div>
+        <div class="member-card">
+            <div class="icon">✧</div>
+            <h3>Palasedclown</h3>
+            <p>エンジョイ部門</p>
+            <p>プレステ勢　基本ゼロビだけらしい</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-    <div class="member-card">
-        <h3>Yatto0912</h3>
-        <p>エンジョイ部門</p>
-    </div>
+        <div class="member-card">
+            <div class="icon">⚝</div>
+            <h3>WTKFT４１３</h3>
+            <p>エンジョイ部門 / 競技部門</p>
+            <p>リア友以外に初めてチームに入ってくれた人</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-    <div class="member-card">
-        <h3>雷電(=^・・^=)</h3>
-        <p>エンジョイ部門</p>
-    </div>
-</section>
+        <div class="member-card">
+            <div class="icon">✪</div>
+            <h3>menndako1919</h3>
+            <p>エンジョイ部門</p>
+            <p>最近あんまり一緒にやってないけどめっちゃうまい　IDたしか変えてると思う</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-<!-- やったこと一覧 -->
-<section id="updates">
-    <h2>やったこと一覧</h2>
+        <div class="member-card">
+            <div class="icon">❂</div>
+            <h3>暇人ニキ哉太郎</h3>
+            <p>競技部門</p>
+            <p>あんまり遊んだことないけど競技がんばってね！（応援してます）</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-    <div class="update-card">
-        <h4>2026/08/04</h4>
-        <p>新しいメンバー「雷電さん」がBNNに加入！</p>
-    </div>
+        <div class="member-card">
+            <div class="icon">✺</div>
+            <h3>bossboy01037</h3>
+            <p>エンジョイ部門</p>
+            <p>新しく仲良くなった子です！入ってくれました！</p>
+            <p>やっているゲーム：フォートナイト</p>
+        </div>
 
-    <div class="update-card">
-        <h4>2026/08/04</h4>
-        <p>メニューを作成</p>
-    </div>
-</section>
+        <div class="member-card">
+            <div class="icon">❀</div>
+            <h3>Yatto0912</h3>
+            <p>エンジョイ部門</p>
+            <p>このチーム初のフォトナ以外の人</p>
+            <p>やっているゲーム：Apex・マイクラ</p>
+        </div>
 
-<footer>
-    © 2026 BNN Team　オーナー BNN AKI1202
-</footer>
+        <div class="member-card">
+            <div class="icon">🫡</div>
+            <h3>雷電(=^・・^=)</h3>
+            <p>エンジョイ部門</p>
+            <p>チャプターXで1回引退→チャプター2シーズン4で復帰→チャプター6シーズン1でSwitchからPS4へ変更（本人談）</p>
+            <p>やっているゲーム：Roblox・Apex・フォートナイト</p>
+        </div>
+
+    </section>
+
+    <!-- BNNについて -->
+    <section class="about" id="about">
+        <h2>BNNについて</h2>
+        <p>
+            BNNは「みんな仲よく」を大切にするゲームチームです。協力プレイ、交流、創作活動など、楽しく活動しています。<br>
+            チームメンバーのIDが変わっていることあり。<br>
+        </p>
+
+        <a class="join-button" href="https://form.run/@BNN" target="_blank">
+            BNN参加フォームへ
+        </a>
+    </section>
+
+    <!-- やったこと一覧 -->
+    <section class="updates" id="updates">
+        <h2>やったこと一覧 / 起きたこと一覧</h2>
+
+        <div class="update-card">
+            <h4>2026/08/04</h4>
+            <p>新しいメンバー「雷電さん」がBNNに加入！</p>
+        </div>
+
+        <div class="update-card">
+            <h4>2026/08/04</h4>
+            <p>メニューを作成</p>
+        </div>
+
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        © 2026 BNN Team　オーナー BNN AKI1202
+    </footer>
+
+    <!-- ロード画面フェードアウト（6秒固定） -->
+    <script>
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            loader.classList.add("hide");
+        }, 6000);
+    </script>
 
 </body>
 </html>
