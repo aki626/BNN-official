@@ -37,8 +37,10 @@
 <!-- 管理者ボタン -->
 <a class="admin-button" onclick="openAdminLogin()">管理者権限を使用する</a>
 
-<!-- 管理者ログイン -->
-<div id="admin-login" class="admin-login">
+<!-- 管理者ログイン（ポップアップ） -->
+<div id="admin-popup-bg" class="popup-bg"></div>
+
+<div id="admin-popup" class="popup">
     <h3>管理者ログイン</h3>
     <input type="password" id="admin-pass" placeholder="パスワードを入力">
     <button onclick="checkAdminPass()">ログイン</button>
@@ -66,9 +68,19 @@
     <input type="text" id="new-role" placeholder="新しい役割を入力">
     <button onclick="changeRole()">変更する</button>
 
+    <h3>メンバーを追加する</h3>
+    <input type="text" id="add-name" placeholder="名前">
+    <input type="text" id="add-role" placeholder="役割">
+    <input type="text" id="add-game" placeholder="ゲーム名">
+    <button onclick="addMember()">追加する</button>
+
     <h3>やったこと一覧に追加</h3>
     <input type="text" id="update-text" placeholder="内容を入力">
     <button onclick="addUpdate()">追加する</button>
+
+    <h3>やったこと一覧を削除</h3>
+    <input type="number" id="delete-index" placeholder="削除する番号（1から）">
+    <button onclick="deleteUpdate()">削除する</button>
 </div>
 
 <!-- メンバー一覧 -->
