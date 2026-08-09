@@ -1,4 +1,6 @@
-/* ロード画面 */
+/* ============================
+   ロード画面
+============================ */
 #loader {
     position: fixed;
     width: 100%;
@@ -26,10 +28,13 @@
 }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* サイドバー（右側固定） */
+/* ============================
+   サイドバー（右側固定）
+============================ */
 .sidebar {
-    position: fixed;
-    right: 0;
+    position: fixed !important;
+    right: 0 !important;
+    left: auto !important;
     top: 0;
     width: 230px;
     height: 100vh;
@@ -37,6 +42,7 @@
     padding: 20px;
     border-left: 2px solid #00eaff;
     box-shadow: -5px 0 15px #00eaff;
+    z-index: 9990;
 }
 .sidebar h3 {
     color: #00eaff;
@@ -47,16 +53,20 @@
     font-size: 18px;
 }
 
-/* メイン余白（右側メニュー用） */
+/* ============================
+   メイン余白（右側メニュー用）
+============================ */
 body {
-    margin-right: 250px;
-    margin-left: 0;
+    margin-right: 250px !important;
+    margin-left: 0 !important;
     background: #0a0a0a;
     color: #fff;
     font-family: "Segoe UI", sans-serif;
 }
 
-/* ヘッダー */
+/* ============================
+   ヘッダー
+============================ */
 .hero {
     text-align: center;
     padding: 20px;
@@ -70,7 +80,9 @@ body {
     text-shadow: 0 0 10px #00eaff;
 }
 
-/* メンバーカード */
+/* ============================
+   メンバーカード
+============================ */
 .member-card {
     background: #111;
     border: 2px solid #00eaff;
@@ -78,16 +90,18 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px #00eaff;
+    transition: 0.2s;
 }
 
 /* ホバー光復活 */
 .member-card:hover {
     box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
     transform: scale(1.02);
-    transition: 0.2s;
 }
 
-/* やったこと一覧 */
+/* ============================
+   やったこと一覧
+============================ */
 .update-card {
     background: #111;
     border: 2px solid #00eaff;
@@ -96,7 +110,9 @@ body {
     border-radius: 10px;
 }
 
-/* 管理者ボタン */
+/* ============================
+   管理者ボタン
+============================ */
 .admin-button {
     display: inline-block;
     margin: 20px 0;
@@ -116,7 +132,9 @@ body {
     transform: scale(1.05);
 }
 
-/* 管理者ログイン・パネル */
+/* ============================
+   管理者ログイン・パネル
+============================ */
 .admin-login, .admin-panel {
     display: none;
     background: #111;
@@ -130,7 +148,9 @@ body {
     color: red;
 }
 
-/* ポップアップ背景 */
+/* ============================
+   ポップアップ背景
+============================ */
 .popup-bg {
     display: none;
     position: fixed;
@@ -140,7 +160,9 @@ body {
     z-index: 9998;
 }
 
-/* ポップアップ本体 */
+/* ============================
+   ポップアップ本体
+============================ */
 .popup {
     display: none;
     position: fixed;
@@ -156,7 +178,9 @@ body {
     text-align: center;
 }
 
-/* 管理者パネル豪華化（青ネオン） */
+/* ============================
+   管理者パネル（青ネオン）
+============================ */
 .admin-panel {
     border: 2px solid #00eaff;
     box-shadow: 0 0 20px #00eaff;
