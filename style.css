@@ -26,17 +26,18 @@
 }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* サイドバー（左側固定） */
+/* サイドバー（右側固定） */
 .sidebar {
     position: fixed;
-    left: 0;
+    right: 0;
     top: 0;
     width: 230px;
     height: 100vh;
     background: #111;
     padding: 20px;
-    border-right: 2px solid #00eaff;
-    box-shadow: 5px 0 15px #00eaff;
+    border-left: 2px solid #00eaff;
+    box-shadow: -5px 0 15px #00eaff;
+    z-index: 9990;
 }
 .sidebar h3 {
     color: #00eaff;
@@ -47,14 +48,15 @@
     font-size: 18px;
 }
 
-/* メイン */
+/* メイン（右サイドバー用余白） */
 body {
-    margin-left: 250px;
+    margin-right: 250px;
     background: #0a0a0a;
     color: #fff;
     font-family: "Segoe UI", sans-serif;
 }
 
+/* ヘッダー */
 .hero {
     text-align: center;
     padding: 20px;
@@ -76,6 +78,13 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px #00eaff;
+    transition: 0.2s;
+}
+
+/* ホバーで光る */
+.member-card:hover {
+    box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+    transform: scale(1.02);
 }
 
 /* やったこと一覧 */
